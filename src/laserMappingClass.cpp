@@ -150,6 +150,7 @@ void LaserMappingClass::checkPoints(int& x, int& y, int& z){
 
 void LaserMappingClass::noiseFilter(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr& pc_in, pcl::PointCloud<pcl::PointXYZRGB>::Ptr& pc_out){
     //manually remove ceiling, you can remove this part if use for other cases
+	// Added new comment
     pcl::CropBox<pcl::PointXYZRGB> crop_box_filter;
     crop_box_filter.setMin(Eigen::Vector4f(-10.0, -0.8, -10.0, 1.0));
     crop_box_filter.setMax(Eigen::Vector4f(10.0, 10.0, 10.0, 1.0));

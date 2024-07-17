@@ -10,6 +10,7 @@ LidarOdometryFactor::LidarOdometryFactor(Eigen::Isometry3d odom_in, Eigen::Matri
 }
 
 bool LidarOdometryFactor::Evaluate(double const *const *parameters, double *residuals, double **jacobians) const {
+    // Added new comment
     Eigen::Vector3d ri(parameters[0][0], parameters[0][1], parameters[0][2]);
     Eigen::Matrix3d Ri = Utils::so3ToR(ri);
     Eigen::Vector3d Pi(parameters[0][3], parameters[0][4], parameters[0][5]);
